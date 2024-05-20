@@ -1,0 +1,54 @@
+<%- include("partials/header.ejs") %>
+
+<div class="main-box">
+    <% if(books.length===0){ %>
+        <p>No book review yet.</p>
+        <% } else { %>
+            <% books.forEach((book)=> { %>
+                <div class="book-container">
+                    <div class="try">
+                        <div class="image-box"><img class="book-image item-1" src="<%= book.cover %>" loading="lazy" alt="<%= book.title  %> Cover" /></div>
+                        <div id="bookdetails" class="book-details">
+                            <h1>
+                                <%= book.title %>
+                            </h1>
+                            <h4>
+                                by <%= book.author %>
+                            </h4>
+                            <small>
+                                <p>ISBN: <%= book.isbn %>
+                                </p>
+                                <p>Release Date: <%= book.publication_date %>.</p>
+                                <p>My rating: <%= book.rating %>/10</p>
+                            </small>
+                        </div>
+                    </div>
+                    <div class="book-review">
+                        <p>
+                            <%= book.review %>
+                        </p>
+                    </div>
+                    <div class="book-buttons">
+                        <form action="/edit" method="post">
+                            <button class="button" type="submit" name="editBook" id="<%= book.id %>" value="<%= book.id %>">
+                                EDIT REVIEW
+                            </button>
+                        </form>
+                        <form action="/delete" method="post">
+                            <button class="button" type="submit" name="deleteBook" id="<%= book.id %>" value="<%= book.id %>">
+                                DELETE REVIEW
+                            </button>
+                        </form>
+                    </div>                  
+                </div>
+            <% }) %>
+        <% } %>
+</div>
+
+<script>
+    document.getElementById("dropdown").addEventListener("change", function () {
+        this.form.submit();
+    });
+</script>
+
+<%- include("partials/footer.ejs") %>

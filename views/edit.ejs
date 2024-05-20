@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+
+<div class="create-container">
+<form action="/save" method="post">
+    <div class="review-area">
+        <h3>Your Review</h3>
+        <textarea name="review" id="review" rows="6" cols="130" required><%= bookReview %></textarea>
+    </div>
+    <div class="bottom-rating">
+        <div>
+            <select name="rating" id="rating" required>
+                <option value="" disabled selected>Rating:</option>
+                <% for(let i=0; i<=10; i++){ %>
+                    <option value="<%= i %>">
+                        <%= i %>
+                    </option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <button class="button" type="submit" name="editBook" value="<%= bookId %>" id="<%= bookId %>">
+                UPDATE REVIEW
+            </button>
+        </div>
+    </div>
+</form>
+
+    <div class="book-error">
+        <% if(locals.error){ %>
+            <%= error %>
+        <% } %>
+    </div>
+
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>
+
+
+
+
+

@@ -1,0 +1,334 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+body {
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.head-bar {
+  background-color: #4A90E2;
+  padding: 1rem 0;
+  border-bottom: 2px solid #3A78D2;
+}
+
+.head-bar .nav-item .btn {
+  color: #fff;
+  background-color: #4A90E2;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.head-bar .nav-item .btn:hover {
+  background-color: #fff;
+  color:#4A90E2;
+}
+
+.head-bar .nav-item .btn:focus {
+  box-shadow: none;
+}
+
+.head-bar .fs-4 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+}
+
+.main-box {
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.book-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.book-container .try {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-container .image-box {
+  flex: 1 1 200px;
+  max-width: 200px;
+}
+
+.book-container .image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 0 0 8px;
+  object-fit: cover;
+}
+
+.book-details {
+  flex: 2 1 400px;
+  padding: 1rem;
+}
+
+.book-details h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.book-details h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.book-details small p {
+  margin: 0.25rem 0;
+  color: #777;
+}
+
+.book-review {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.book-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid #eee;
+}
+
+.book-buttons .button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.book-buttons .button:hover {
+  background-color: #bebebe;
+}
+
+.text-center {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+form {
+  display: inline;
+}
+
+.btn-primary {
+  background-color: #4A90E2;
+  border-color: #4A90E2;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #3A78D2;
+  border-color: #3A78D2;
+}
+
+.btn-danger {
+  background-color: #D9534F;
+  border-color: #D9534F;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #C9302C;
+  border-color: #C9302C;
+}
+
+/* Create/Edit Form Styles */
+.create-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.isbn-check button{
+  margin-right: 0.5rem;
+  padding: 0.2rem 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.isbn-check button:hover{
+  background-color: #bebebe;
+}
+
+.title-check{
+  color: #acacac;
+}
+
+.review-area h3 {
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.review-area textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.bottom-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.bottom-rating select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.bottom-rating .button {
+  padding: 0.5rem 1rem;
+  background-color: #4A90E2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.bottom-rating .button:hover {
+  background-color: #1d4580;
+}
+
+.book-error {
+  color: #D9534F;
+  margin-top: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+footer {
+  color: #b3b3b3;
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 480px) {
+  body{
+    font-size: 0.75rem;
+  }
+
+  .head-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .head-bar .nav-item {
+    margin-bottom: 0rem;
+  }
+
+  .head-bar .nav-item .btn {
+    font-size: 0.8rem;
+  }
+
+  .main-box {
+    padding: 1rem;
+  }
+
+  .book-container .image-box {
+    flex: 0 0 auto; /* Reset the flex properties to allow the image to determine its own size */
+    width: 100%; /* Ensure the image takes up the full width */
+    max-width: 150px; /* Limit the maximum width of the image */
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .book-container .image-box img {
+    display: inline-block; /* Ensure the image behaves as an inline-block element */
+    max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+  }
+
+  .book-details h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .book-details h4 {
+    font-size: 1rem;
+  }
+
+  .book-review{
+    font-size: 0.75rem;
+  }
+
+  .book-container .try {
+    justify-content: center; /* Center the content horizontally */
+  }
+
+  .book-buttons .button {
+    padding: 0.3rem 1rem;
+  }
+
+  .create-container {
+    padding: 1rem;
+    margin: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .review-area textarea {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .bottom-rating select {
+    padding: 0.3rem;
+    border: 0.5px solid #ccc;
+    font-size: 0.75rem;
+  }
+
+  .bottom-rating .button {
+    padding: 0.3rem 1rem;
+  }
+
+  .book-error{
+    font-size: 0.7rem;
+  }
+
+  footer {
+    font-size: 0.4rem;
+  }
+  
+}
+

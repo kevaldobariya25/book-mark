@@ -1,0 +1,80 @@
+<%- include("partials/header.ejs") %>
+<div class="create-container">
+<form action="/create" method="post">
+    <div class="isbn-check">
+        <input type="text" name="isbn" id="isbn" placeholder="ISBN Number" required autofocus>
+        <button type="button" class="button" id="checkTitle">Check Title</button>
+    </div>
+    <div id="titleResult" class="title-check">Enter ISBN number to get title</div>
+    <div class="review-area">
+        <h3>Your Review</h3>
+        <textarea name="review" id="review" rows="6" cols="130" required></textarea>
+    </div>
+    <div class="bottom-rating">
+        <div>
+            <select name="rating" id="rating" required>
+                <option value="" disabled selected>Rating:</option>
+                <% for(let i=0; i<=10; i++){ %>
+                    <option value="<%= i %>"><%= i %></option>
+                <% } %>
+            </select>
+        </div>
+        <div><input class="button" type="submit" value="SUBMIT REVIEW"></div>
+    </div>
+</form>
+
+    <div class="book-error">
+        <% if(locals.error){ %>
+            <%= error %>
+        <% } %>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const checkTitleBtn = document.getElementById('checkTitle');
+    const isbnInput = document.getElementById('isbn');
+    const titleResult = document.getElementById('titleResult');
+
+    checkTitleBtn.addEventListener('click', async function() {
+        const isbn = isbnInput.value.trim();
+        if (isbn) {
+            try {
+                const apiUrl = `https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`;
+                const response = await axios.get(apiUrl);
+                const bookDetails = response.data[`ISBN:${isbn}`];
+                if (bookDetails) {
+                    const bookName = bookDetails.title;
+                    const authorName = bookDetails.authors[0].name;
+                    titleResult.innerHTML = `Book Title: ${bookName} by ${authorName}`;
+                
+                } else {
+                    titleResult.innerHTML = 'No book found with this ISBN.';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                titleResult.innerHTML = 'Error occurred while checking the title.';
+            }
+        } else {
+            titleResult.innerHTML = 'Please enter an ISBN.';
+        }
+    });
+});
+</script>
+
+
+<%- include("partials/footer.ejs") %>
+
+
+
+
+
+
+
+
+
+
+
+
+
