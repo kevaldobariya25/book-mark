@@ -155,9 +155,4 @@ https://openlibrary.org/dev/docs/api/covers
 
 https://covers.openlibrary.org/b/isbn/0385472579-S.jpg
 
--------------------------------------------------------
-
-https://digital-bookself.onrender.com/
-
-https://github.com/DimitrisPapazafeiris/Digital-Bookself
 */
